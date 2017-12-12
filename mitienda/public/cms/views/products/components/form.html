@@ -1,0 +1,53 @@
+<style>
+figure  img {
+	width:150px !important;
+}
+</style>
+<form name="ProductForm" action="">
+  <div class="row">
+    <div class="col s6">
+        <div class="input-field col s12">
+            <h6 class="active" for="name">{{ 'Name' | language:true }}</h6>
+            <input ng-model="product.name" id="name" type="text" validator="required" name="name">
+        </div>
+    </div>
+    
+    <div class="col s6">
+        <div class="input-field col s12">
+            <h6>{{ 'Price' | language:true }}</h6>
+             <input ng-model="product.price" id="price" type="text" validator="required" name="price">
+        </div>
+    </div>
+    <div class="col s12">
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>{{ 'image' | language:true}}</span>
+                <input type="file" name="image" file-model="image">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path" type="text">
+            </div>
+        </div>
+        <figure class="col s12" ng-if="product.full_image">
+            <img src="{{ product.full_image }}" alt="" class="col s12" />
+        </figure>
+    </div>
+    
+    <div class="col s12">
+        <div class="input-field col s12 text-angular">
+            <h6>{{ 'Description' | language:true }}</h6>
+            <!--<div text-angular name="htmlcontent" ng-model="product.description" ></div>-->
+            <input type="text" validator="required" id="description" ng-model="product.description" name="description" />
+        </div>
+    </div>
+    
+    <div class="col s3">
+       <div class=""><br><br><br>
+        <button class="btn waves-effect waves-light btn-small green" type="button" validation-submit="ProductForm" ng-click="sendForm()">
+           Save
+        </button><br><br><br>
+       </div>
+    </div>
+ 
+  </div>
+</form>

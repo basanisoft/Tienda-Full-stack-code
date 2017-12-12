@@ -1,0 +1,21 @@
+<h3>Stores</h3>
+<form name="StoreForm" action="" >
+    <div class="col s9">
+        <div class="input-field col s12">
+            <h6  class="active" for="name">{{ 'Store Name'}}</h6>
+            <input ng-model="store.store_name" id="store_name" type="text" validator="required">
+        </div>
+    </div>
+    <div class="col s12">
+        <div class="input-field col s12 text-angular">
+            <h6>{{ 'Description' | language:true }}</h6>
+            <div text-angular name="htmlcontent" ng-model="store.description" ></div>
+            <input type="hidden" validator="required" id="description" ng-model="store.description" name="description" />
+        </div>
+    </div>
+    <div class="col s12 left-align"><br><br><br>
+        <button class="btn waves-effect waves-light btn-small green" type="button" validation-submit="StoreForm" ng-click="sendForm()" >
+            Save
+        </button>
+    </div>
+</form>

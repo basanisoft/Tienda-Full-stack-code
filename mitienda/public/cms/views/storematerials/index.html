@@ -1,0 +1,39 @@
+
+<h3 class="col s9"> {{ 'Store Products'}}</h3>
+<div class="col s3 right-align padding-right-20">
+    <a href="#/storematerials/create" class="btn-floating waves-effect waves-light btn-small green">
+        <i class="fa fa-plus"></i>
+    </a>
+</div>
+
+<table class="responsive-table striped">
+    <thead>
+    <tr class="row">
+        <th data-field="name">{{ 'Store name' | language:true }}</th>
+        <th data-field="name">{{ 'Product name' | language:true }}</th>
+        <th data-field="name">{{ 'Quantity' | language:true }}</th>
+        <th data-field="created_date">{{ 'created' | language:true }}</th>
+        <th data-field="actions"></th>
+        <th data-field="actions"></th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="(c ,storematerial) in storematerials">
+        <td>{{ storematerial.id }}</td>
+        <td>{{ storematerial.store.store_name }}</td>
+        <td>{{ storematerial.product.name }}</td>
+        <td>{{ storematerial.quantity}}</td>
+        <td>{{ storematerial.created_at | date }}</td>
+        <td class="right-align padding-right-20">
+            <a href="#/storematerials/{{ storematerial.id }}/edit"class="btn-floating waves-effect waves-light btn-small blue">
+                <i class="fa fa-pencil-square-o"></i>
+            </a>
+        </td>
+        <td class="right-align padding-right-20">
+            <a ng-click="delete(storematerial.id , c)" class="btn-floating waves-effect waves-light btn-small red">
+                <i class="fa fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>

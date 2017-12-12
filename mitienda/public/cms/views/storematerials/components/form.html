@@ -1,0 +1,30 @@
+<h3>Store Products</h3>
+<form name="StorematerialForm" action="" >
+    <div class="col s9">
+        <div class="input-field col s12">
+            <h6  class="active" for="name">{{ 'Store Name'}}</h6>
+            <select ng-model="storematerial.store_id" id="store_id" class="validate browser-default" validator="required" name="store_id" >
+                <option  ng-repeat="store in stores" value="{{ store.id }}" ng-selected="{{ storematerial.store_id==store.id }}">{{ store.store_name }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col s9">
+        <div class="input-field col s12">
+            <h6  class="active" for="name">{{ 'Material Name'}}</h6>
+            <select ng-model="storematerial.material_id" id="material_id" class="validate browser-default" validator="required" name="material_id">
+               <option ng-repeat="product in products" value="{{ product.id }}" ng-selected="{{ storematerial.material_id==product.id }}">{{ product.name }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col s9">
+        <div class="input-field col s12">
+            <h6  class="active" for="name">{{ 'Quantity'}}</h6>
+            <input ng-model="storematerial.quantity" id="quantity" type="text" validator="required">
+        </div>
+    </div>
+    <div class="col s3 left-align">
+        <button class="btn waves-effect waves-light btn-small green" type="button" validation-submit="StorematerialForm" ng-click="sendForm()" >
+            Save
+        </button>
+    </div>
+</form>

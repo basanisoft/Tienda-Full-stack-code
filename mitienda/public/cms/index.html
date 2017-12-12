@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/cms/"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css"
+          media="screen,projection"/>
+    <link rel="stylesheet" href="css/utils.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+    <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/lwc.min.css' />
+    <link rel='stylesheet' type='text/css' media='all' href='/stylesheets/angularjs_shopping_cart_spa.min.css' />
+    <link rel="stylesheet" type='text/css' media='all' href="/stylesheets/datatables.bootstrap.css">
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body ng-app="cms">
+
+        <cms-menu></cms-menu>
+
+        <div class="container">
+            <div class="row1">
+                <div ng-view class="margin-top-10"></div>
+            </div>
+        </div>
+        <!--Import jQuery before materialize.js-->
+        
+          
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+        <!--<script type="text/javascript" src='bower_components/angular-cookies/angular-cookies.min.js'></script>-->
+        <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-validation/dist/angular-validation.js"></script>
+        <script type="text/javascript" src="bower_components/angular-validation/dist/angular-validation-rule.js"></script>
+        <script type="text/javascript" src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
+        <script type="text/javascript" src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+        <script type="text/javascript" src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+        <script type="text/javascript" src='bower_components/textAngular/dist/textAngular.min.js'></script>
+        <script type="text/javascript" src="bower_components/angular-datatables.min.js"></script>
+        <script type="text/javascript" src="bower_components/jquery.dataTables.min.js"></script>
+          
+
+        <script type="text/javascript" src="scripts/cms.js"></script>
+        <script type="text/javascript" src="scripts/cms.config.js"></script>
+        <script type="text/javascript" src="scripts/cms.language.js"></script>
+        <script type="text/javascript" src="scripts/cms.middleware.js"></script>
+        <script type="text/javascript" src="scripts/cms.root.js"></script>
+        <script type="text/javascript" src="scripts/cms.routes.js"></script>
+        <script type="text/javascript" src="scripts/cms.components.js"></script>
+        <script type="text/javascript" src="controllers/user.controllers.js"></script>
+        <script type="text/javascript" src="controllers/product.controllers.js"></script>
+        <script type="text/javascript" src="controllers/store.controllers.js"></script>
+        <script type="text/javascript" src="controllers/shop.controllers.js"></script>
+        <script type="text/javascript" src="controllers/order.controllers.js"></script>
+        <script type="text/javascript" src="controllers/storematerial.controllers.js"></script>
+        <script type="text/javascript" src="services/product.services.js"></script>
+        <script type="text/javascript" src="services/store.services.js"></script>
+        <script type="text/javascript" src="services/shop.services.js"></script>
+        <script type="text/javascript" src="services/order.services.js"></script>
+        <script type="text/javascript" src="services/storematerial.services.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".button-collapse").sideNav();
+                $('select').material_select();
+            })
+
+        </script>
+    </body>
+</html>

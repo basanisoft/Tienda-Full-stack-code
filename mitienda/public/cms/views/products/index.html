@@ -1,0 +1,38 @@
+<h3 class="col s9"> {{ 'Products' }}</h3>
+<div class="col s3 right-align padding-right-20">
+    <a href="#/products/create" class="btn-floating waves-effect waves-light btn-small green">
+        <i class="fa fa-plus"></i>
+    </a>
+</div>
+
+<table class="responsive-table striped">
+    <thead>
+    <tr class="row">
+        <th data-field="name">{{ 'Name'}}</th>
+        <th data-field="available">{{ 'Price' }}</th>
+        <th data-field="excerpt">{{ 'Image' }}</th>
+        <th data-field="created_date">{{ 'Created'}}</th>
+        <!--<th data-field="actions"></th>
+        <th data-field="actions"></th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="(p ,product) in products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td><img src='/cms/products_images/{{product.image}}' alt='{{product.name}}' width="50px"/></td>
+        <td>{{ product.created_at | date }}</td>
+        <td class="right-align padding-right-20">
+            <a href="#/products/{{ product.id }}/edit" class="btn-floating waves-effect waves-light btn-small blue">
+                <i class="fa fa-pencil-square-o"></i>
+            </a>
+        </td>
+        <td class="right-align padding-right-20">
+            <a ng-click="delete(product.id , p)" class="btn-floating waves-effect waves-light btn-small red">
+                <i class="fa fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,30 @@
+<header >
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper container">
+                <a href="/#/" class="brand-logo">{{ 'Mi Tienda' | language:true }}</a>
+                <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul ng-if="loggedIn" class="right hide-on-med-and-down" style="margin-top:18px;">
+                    <li><a href="/#/">{{ 'Home' | language:true }}</a></li>
+                    <li><a href="/#/products">{{ 'products' | language:true }}</a></li>
+                    <li><a href="/#/stores">{{ 'stores' | language:true }}</a></li>
+                    <!--<li><a href="/#/storeproducts">{{ 'store products' | language:true }}</a></li>-->
+                    <li><a href="/#/storematerials">{{ 'store products' | language:true }}</a></li>
+                    <li><a href="/#/orders">{{ 'Orders' | language:true }}</a></li>
+                    <!--<li><a href="/#/categories">{{ 'categories' | language:true }}</a></li>-->
+                    <li><a ng-click="logout();" >{{ 'logout' | language:true }}</a></li>
+                </ul>
+                <ul ng-if="loggedIn" class="side-nav" id="mobile-demo">
+                   <!-- <li><a href="/#/shops">{{ 'Shops' | language:true }}</a></li>-->
+                    <li><a href="/#/">{{ 'Home' | language:true }}</a></li>
+                    <li><a href="/#/products">{{ 'products' | language:true }}</a></li>
+                    <li><a href="/#/stores">{{ 'stores' | language:true }}</a></li>
+                    <li><a href="/#/storeproducts">{{ 'store products' | language:true }}</a></li>
+                    <li><a href="/#/orders">{{ 'Orders' | language:true }}</a></li>
+                    <!--<li><a href="/#/categories">{{ 'categories' | language:true }}</a></li>-->
+                    <li><a ng-click="logout();" >{{ 'logout' | language:true }}</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

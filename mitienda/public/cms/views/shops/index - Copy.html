@@ -1,0 +1,77 @@
+<!--<div><a href="" ng-click="show = 'shopping'">Cart</a>-->
+<style type='text/css'>
+.cb {
+    list-style: none;
+    padding:5px;
+    display:inline-block;
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid black;
+	border-radius: 5px;
+}
+.cb{
+	color: #FFF;
+}
+a{
+  cursor:pointer;
+}
+</style>
+<div class="pull-right">
+<!--<div class="cb" ng-click="showDetails = ! showDetails">Shooping</div>-->
+<a><div class="cb" ng-click="showDetails = ! showDetails"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{cart.length}} items</div></a>
+</div>
+<p><br><br></p>
+<div class='' ng-init="tab =  1">
+<div ng-hide="showDetails">
+<div ng-repeat='product in products' class='row'>
+  <div class='col-xs-2' ng-if="product.image"> <img src='/cms/products_images/{{product.image}}' alt='{{product.name}}' height="90px;"/> </div>
+  <div class='col-xs-2' ng-if="!product.image"> <img src='/cms/products_images/noimage.png' alt='{{product.name}}' height="90px;"/> </div>
+  <div class='col-xs-8'>
+    <div class='itemName'>{{product.material.name}}</div>
+    <ul class='itemDetail'>
+      <li><span>Desc:</span> {{product.description}}</li>
+      <li><span>Code #:</span> {{product.id}}</li>
+    </ul>
+  </div>
+  <div class='col-xs-2 text-align-right'>
+    <div class='itemPriceEach' ng-if="product.price">{{product.price | currency}}</div>
+    <button ng-click='addItemToCart(product)' class='btn btn-sm'>Add<span class='hidden-xs'>&nbsp;To&nbsp;Cart</span>&nbsp;&gt;</button>
+  </div>
+</div>
+</div>
+<div ng-show="showDetails">
+<div ng-show="cart.length !== 0">
+  <h3>Shopping Cart</h3>
+  <ul class="list-group">
+    <li class="list-group-item row" ng-repeat="c in cart">
+      <div class='col-xs-2' ng-if="c.image"> <img src='/cms/products_images/{{c.image}}' alt='{{c.name}}' height="85px;" /> </div>
+      <div class='col-xs-2' ng-if="!c.image"> <img src='/cms/products_images/noimage.png' alt='{{c.name}}' height="85px;" /> </div>
+      <div class='col-xs-8'>
+        <div class='itemName'>{{c.name}}</div>
+        <ul class='itemDetail'>
+          <li><span>Qty:</span> {{c.count}}</li>
+          <li><span>Price:</span> {{c.price*c.count | currency}}</li>
+        </ul>
+      </div>
+      <div class='col-xs-2 text-align-right'>
+        <!--<button class="btn btn-danger" type="button" ng-click="removeItemCart(c)"><i class="fa fa-trash"></i></button>-->
+        <a class="btn-floating waves-effect waves-light btn-small red" ng-click="removeItemCart(c)"><i class="fa fa-minus"></i></a>
+        <a class="btn-floating waves-effect waves-light btn-small green" ng-click="addItemToCart(c)"><i class="fa fa-plus"></i></a>
+      </div>
+    </li>
+  </ul>
+  <div class="pull-right"><h3>Total : {{total | currency}}</h3></div>
+</div>
+<br><br><br>
+<a><div class="cb" ng-click="showDetails = ! showDetails"><< Continue Shopping</div></a>
+<a><div class="cb pull-right" ng-click="placeOrder(product)">Place Order >></div></a>
+</div>
+<!--<script>
+angular.module('myApp.filters', []).
+  filter('htmlToPlaintext', function() {
+    return function(text) {
+      return  text ? String(text).replace(/<[^>]+>/gm, '') : '';
+    };
+  }
+);
+</script>-->

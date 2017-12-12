@@ -1,0 +1,30 @@
+'use strict'
+
+angular.module(
+    'cms',
+    [
+        'validation',
+        'validation.rule',
+        'ngRoute',
+        'ngResource',
+        'angular.filter',
+        'textAngular',
+        'cms.config',
+        'cms.language',
+        'cms.root',
+        'cms.middleware',
+        'cms.routes',
+        'user.controllers',
+		'product.controllers',
+        'product.services',
+		'store.controllers',
+        'store.services',
+		'storematerial.controllers',
+		'storematerial.services',
+		'order.controllers',
+        'order.services',
+		'shop.controllers',
+		'shop.services',
+        'cms.components',
+    ]
+)

@@ -1,0 +1,27 @@
+<h3 class="col s9"> {{ 'Orders'}}</h3>
+<!--<div class="col s3 right-align padding-right-20">
+    <a href="#/stores/create" class="btn-floating waves-effect waves-light btn-small green">
+        <i class="fa fa-plus"></i>
+    </a>
+</div>-->
+
+<table class="responsive-table striped" id="smart_table" datatable="ng">
+    <thead>
+    <tr class="row">
+        <th data-field="id">{{ 'Order State' }}</th>
+        <th data-field="state">{{ 'Product Name' | language:true }}</th>
+        <th data-field="name">{{ 'Quantity' | language:true }}</th>
+        <th data-field="quantity">{{ 'Created' | language:true }}</th>
+        <th data-field="created_date"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="(c ,order) in orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.order_state}}</td>
+        <td>{{ order.product.name }}</td>
+        <td>{{ order.quantity}}</td>
+        <td>{{ order.created_at | date }}</td>
+    </tr>
+    </tbody>
+</table>
