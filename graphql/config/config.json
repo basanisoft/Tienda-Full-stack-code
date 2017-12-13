@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "",
-    "database": "mean_mitienda",
+    "database": "mitienda",
     "host": "localhost",
     "dialect": "mysql"
   },
