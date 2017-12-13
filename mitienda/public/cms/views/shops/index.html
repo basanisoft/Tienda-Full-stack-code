@@ -63,9 +63,10 @@ a{
   </ul>
   <div class="pull-right"><h3>Total : {{total | currency}}</h3></div>
 </div>
+<div ng-if="cart.length==0"><h3>Your Cart Is Empty</h3></div>
 <br><br><br>
 <a><div class="cb" ng-click="showDetails = ! showDetails"><< Continue Shopping</div></a>
-<a><div class="cb pull-right" ng-click="placeOrder(product)">Place Order >></div></a>
+<a ng-if="cart.length"><div class="cb pull-right" ng-click="placeOrder(product)">Place Order >></div></a>
 </div>
 <!--<script>
 angular.module('myApp.filters', []).
